@@ -1,0 +1,48 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="application-ui">
+    <template>
+        <style>
+            :host {
+                width: 100%;
+                height: 100%;
+
+                position: fixed;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+        </style>
+    </template>
+    <script>
+        Polymer({
+            is: "application-ui",
+
+            created: function() {
+                this.mActivityUiStack = [];
+            },
+
+            startActivityUi: function(pNewActivityUi) {
+                if (this.mActivityUiStack.length > 0) {
+                    var mOldActivityUi = this.mActivityUiStack[this.mActivityUiStack.length - 1];
+                    mOldActivityUi.onStop();
+                    Polymer.dom(this.root).removeChild(mOldActivityUi);
+                }
+                this.mActivityUiStack.push(pNewActivityUi);
+                Polymer.dom(this.root).appendChild(pNewActivityUi);
+                pNewActivityUi.onStart();
+            },
+            back: function() {
+                var mOldActivityUi = this.mActivityUiStack.pop();
+                mOldActivityUi.onStop();
+                Polymer.dom(this.root).removeChild(mOldActivityUi);
+                if (this.mActivityUiStack.length > 0) {
+                    var mNewActivityUi = this.mActivityUiStack[this.mActivityUiStack.length - 1];
+                    Polymer.dom(this.root).appendChild(mNewActivityUi);
+                    mNewActivityUi.onStart();
+                }
+            }
+        });
+    </script>
+</dom-module>
