@@ -1,0 +1,26 @@
+{
+  "name": "cancer-sucks",
+  "version": "0.0.0",
+  "homepage": "https://github.com/Opportunity-Hack-2015-Arizona/Team2",
+  "authors": [
+    "Miras Absar <miras.absar@gmail.com>"
+  ],
+  "description": "A secure community for cancer patients to connect.",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.1.0",
+    "iron-elements": "PolymerElements/iron-elements#^1.0.0",
+    "paper-elements": "PolymerElements/paper-elements#^1.0.0",
+    "google-web-components": "GoogleWebComponents/google-web-components#^1.0.0"
+  }
+}
