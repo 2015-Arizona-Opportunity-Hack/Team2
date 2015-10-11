@@ -1,0 +1,47 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/signup.css') }}" rel="stylesheet" />
+    <script src="{{ url_for('static', filename='js/getLocation.js') }}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?&signed_in=true&libraries=places&callback=initAutocomplete"
+            async defer></script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="wrap">
+                <p class="form-title">Please provide these details to get approved!
+                </p>
+                <form class="login" action="" method="post">
+                    <input name="dob" type="text" placeholder="DOB" />
+<div id="locationField">
+                        <input id="autocomplete" placeholder="Enter your address"
+                               onFocus="geolocate()" type="text" autocomplete="off"/></input>
+                    </div>
+                    <input name="phonenum" type="text" placeholder="Phone Number" />
+                    <input name="diagnosis" type="text" placeholder="Diagnosis" />
+                    <input name="treatcen" type="text" placeholder="Treatment Center" />
+                    <input name="childhob" type="text" placeholder="Hobbies" />
+                    <input name="state" type="text" placeholder="State" hidden/>
+                    <input name="longlat" type="text" placeholder="Longlat" hidden/>
+                    <input name="facebook" type="text" placeholder="Facebook Link"/>
+                    <input name="twitter" type="text" placeholder="Twitter Link"/>
+                    <input name="socialnum" type="text" placeholder="Social Worker Number" />
+                    <input name="socialname" type="text" placeholder="Social Worker Name" />
+                    <input name="acctype" type="text" placeholder="Account Type" hidden value="{{acc_type}}"/>
+
+                    <input type="submit" value="Get Approved" class="btn btn-default btn-sm" />
+                    <div class="remember-forgot">
+                        <div class="row">
+                            <div class="col-md-6">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

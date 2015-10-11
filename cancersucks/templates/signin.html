@@ -1,0 +1,34 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/signup.css') }}" rel="stylesheet" />
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="pr-wrap">
+                <div class="pass-reset">
+                    <label>
+                        Enter the email you signed up with</label>
+                    <input type="email" placeholder="Email" />
+                    <input type="submit" value="Submit" class="pass-reset-submit btn btn-success btn-sm" />
+                </div>
+            </div>
+            <div class="wrap">
+                <p class="form-title"> Hope Chain
+                    </p>
+                <form class="login" method="POST", action="">
+                    <input type="text" placeholder="Username" name = "username"/>
+                    <input type="password" placeholder="Password" name="password" />
+                    <input type="submit" value="Log In" class="btn btn-default btn-sm" />
+                   </form>
+                <form class="login" method="GET", action="/signup">
+                   <a href="/signup"> <input type="submit" value="Sign Up" class="btn btn-default btn-sm" /></a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
